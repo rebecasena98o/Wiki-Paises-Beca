@@ -1,16 +1,53 @@
-# React + Vite
+# WikiPaíses 🌍
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto prático individual de desenvolvimento front-end com **React** para a disciplina de **Desenvolvimento Plataformas Web** (Bacharelado em Ciência da Computação - UNIFOR).
 
-Currently, two official plugins are available:
+O WikiPaíses é um catálogo digital que consome a [REST Countries API](https://restcountries.com) para exibir informações detalhadas sobre nações soberanas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tecnologias Utilizadas
 
-## React Compiler
+- **React** com **Vite**
+- **React Router DOM** (Navegação)
+- **Axios** (Requisições HTTP)
+- **Hooks**: `useState` e `useEffect`
+- **Estilização**: (Escolha: CSS Modules/Styled Components/Tailwind)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Funcionalidades
 
-## Expanding the ESLint configuration
+### Tela Home (Listagem)
+- [ ] Grid de cards com bandeira, nome, capital, região e população formatada.
+- [ ] Busca em tempo real por nome do país.
+- [ ] Filtro por continente (Americas, Europe, Asia, Africa, Oceania).
+- [ ] Paginação funcional com indicadores de página.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Tela Detail (Detalhes)
+- [ ] Informações completas: Nome oficial, sub-região, área, idiomas e moeda.
+- [ ] Botão "Voltar" para a listagem principal.
+- [ ] Seção descritiva sobre o país.
+
+## 📦 Como rodar o projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com
+    ```
+2. Instale as dependências:
+    ```bash
+    npm install
+    ```
+
+3. Inicie o servidor de desenvolvimento:
+    ```bash
+    npm install
+    npm run dev
+    ```
+
+## 🔗 Links Importantes
+
+    Deploy da Aplicação: (Link aqui (Vercel/Netlify))
+    API Utilizada: restcountries.com
+
+## 📖 Orientadores
+
+Professor orientador: Bruno Lopes
+Aluno: Rebeca Sena
