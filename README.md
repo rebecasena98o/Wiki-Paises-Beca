@@ -49,5 +49,5 @@ O WikiPaíses é um catálogo digital que consome a [REST Countries API](https:/
 
 ## 📖 Orientadores
 
-Professor orientador: Bruno Lopes
-Aluno: Rebeca Sena
+- Professor orientador: Bruno Lopes <br>
+- Aluno: Rebeca Sena
