@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import PaisesWiki from '../services/WikiApi'; 
+import { countryService } from '../services/WikiApi';
 import Blockinfo from '../components/Blockinfo';
-import Loader from '../components/Loader'; // Usando o spinner que criamos
-import Layout from '../components/Layout'; // Importamos o Layout para manter o Header e Footer
+import Loader from '../components/Loader'; 
+import Layout from '../components/Layout';
 
 const Detail = () => {
   const { code } = useParams(); 
@@ -15,8 +15,8 @@ const Detail = () => {
 
     setLoading(true);
     
-    // A API restcountries pode ser sensível a maiúsculas no endpoint /alpha/
-    PaisesWiki.getCountryByCode(code.toUpperCase())
+    
+    countryService.getCountryByCode(code.toUpperCase())
       .then((res) => {
         // A API costuma retornar um array mesmo para busca por código único
         const result = Array.isArray(res) ? res[0] : res;
@@ -38,9 +38,14 @@ const Detail = () => {
   if (!country) {
     return (
       <Layout>
-        <div style={{ padding: "50px", textAlign: "center" }}>
-          <p>País não encontrado.</p>
-          <Link to="/">Voltar para a Home</Link>
+        <div style={{ padding: "100px 20px", textAlign: "center" }}>
+          <h2 style={{ fontFamily: 'var(--font-serif)' }}>País não encontrado</h2>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '20px' }}>
+            Não conseguimos localizar as informações para o código: {code}
+          </p>
+          <Link to="/" style={{ color: 'var(--accent-color)', fontWeight: 'bold' }}>
+            Voltar para a Home
+          </Link>
         </div>
       </Layout>
     );
@@ -57,38 +62,74 @@ const Detail = () => {
 
   return (
     <Layout>
-      <div className="detail-container" style={{ padding: '40px', maxWidth: '1200px', margin: '0 auto' }}>
-        <Link to="/" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontWeight: 'bold', fontSize: '0.9rem' }}>
+      <div className="detail-container" style={{ padding: '40px 5%', maxWidth: '1300px', margin: '0 auto' }}>
+        
+        {/* Botão de Voltar sofisticado */}
+        <Link to="/" style={{ 
+          textDecoration: 'none', 
+          color: '#364a70', 
+          fontWeight: 'bold', 
+          fontSize: '0.8rem',
+          letterSpacing: '1px',
+          display: 'inline-block',
+          marginBottom: '30px'
+        }}>
           ← BACK TO ATLAS
         </Link>
 
-        <section className="detail-header" style={{ marginTop: '30px', display: 'flex', gap: '40px', alignItems: 'center', flexWrap: 'wrap' }}>
+        {/* Cabeçalho do Detalhe */}
+        <section className="detail-header" style={{ 
+          display: 'flex', 
+          gap: '60px', 
+          alignItems: 'center', 
+          flexWrap: 'wrap' 
+        }}>
           <img 
             src={country.flags.svg} 
             alt={country.name.common} 
-            style={{ width: '400px', maxWidth: '100%', borderRadius: '4px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} 
+            style={{ 
+              width: '300px', 
+              maxWidth: '100%', 
+              borderRadius: '12px', 
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.56)' 
+            }} 
           />
-          <div className="names">
-            <h1 style={{ fontSize: '3rem', margin: 0, fontFamily: 'var(--font-serif)' }}>{country.name.common}</h1>
-            <p style={{ color: '#778da9', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '2px' }}>
+          <div className="names" style={{ flex: '1', minWidth: '300px' }}>
+            <h1 style={{ 
+              fontSize: '4rem', 
+              margin: '0 0 10px 0', 
+              fontFamily: 'var(--font-serif)',
+              color: 'var(--primary-color)',
+              lineHeight: '1.1'
+            }}>
+              {country.name.common}
+            </h1>
+            <p style={{ 
+              color: 'var(--text-secondary)', 
+              fontSize: '1.2rem', 
+              textTransform: 'uppercase', 
+              letterSpacing: '3px',
+              fontWeight: '500'
+            }}>
               {country.name.official}
             </p>
           </div>
         </section>
 
+        {/* Grid de Informações */}
         <div className="info-grid" style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-          gap: '30px', 
-          marginTop: '50px',
-          borderTop: '1px solid #ddd',
-          paddingTop: '30px'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', 
+          gap: '40px', 
+          marginTop: '90px',
+          borderTop: '1px solid #0000008c',
+          paddingTop: '40px'
         }}>
-          <Blockinfo label="Capital" value={country.capital?.[0]} />
+          <Blockinfo label="Capital" value={country.capital?.[0] || 'N/A'} />
           <Blockinfo label="Continent" value={country.region} />
-          <Blockinfo label="Sub-region" value={country.subregion} />
-          <Blockinfo label="Population" value={country.population?.toLocaleString()} />
-          <Blockinfo label="Area" value={`${country.area?.toLocaleString()} km²`} />
+          <Blockinfo label="Sub-region" value={country.subregion || 'N/A'} />
+          <Blockinfo label="Population" value={country.population?.toLocaleString('pt-BR')} />
+          <Blockinfo label="Area" value={country.area ? `${country.area.toLocaleString('pt-BR')} km²` : 'N/A'} />
           <Blockinfo label="Languages" value={languages} />
           <Blockinfo label="Currency" value={currencies} />
           <Blockinfo label="ISO Code" value={country.cca3} />
