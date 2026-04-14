@@ -32,7 +32,7 @@ export const countryService = {
   
   getCountryByCode: async (code) => {
     try {
-      const response = await api.get(`/alpha/${code}?fields=name,flags,cca3,population,region,subregion,capital,currencies,languages,area`);
+      const response = await WikiApi.get(`/alpha/${code}?fields=name,flags,cca3,population,region,subregion,capital,currencies,languages,area`);
         return response.data;
     } catch (error) {
       console.error(`Erro ao buscar detalhes do país ${code}:`, error);
