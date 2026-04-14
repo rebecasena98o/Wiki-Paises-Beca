@@ -1,16 +1,16 @@
 import axios from "axios";
 
-const api = axios.create({
+const WikiApi = axios.create({
   baseURL: "https://restcountries.com/v3.1",
   timeout: 10000,
 });
 
 
-const countryService = {
+export const countryService = {
   
   getAllCountries: async () => {
     try {
-      const response = await api.get("/all?fields=name,flags,cca3,population,region,capital");
+      const response = await WikiApi.get("/all?fields=name,flags,cca3,population,region,capital");
         return response.data;
     } catch (error) {
       console.error("Erro ao buscar todos os países:", error);
@@ -40,3 +40,5 @@ const countryService = {
     }
   }
 };
+
+export default countryService;
