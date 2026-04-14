@@ -1,0 +1,98 @@
+
+:root {
+  --primary-color: #0d1b2a;
+  --text-main: #1b263b;
+  --text-secondary: #778da9;
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --accent-color: #e63946; /* Cor para badges ou detalhes */
+  --font-serif: 'Playfair Display', serif; /* Fonte para títulos conforme protótipo */
+  --font-sans: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-times new-roman);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Estilo para a seção Hero (Explore the Atlas) */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.hero p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+
+/* Garante que o grid de cards fique organizado */
+.countries-grid {
+  display: grid;
+  /* Garante cards largos (mínimo 280px) */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px; /* Mais espaço entre os cards */
+  padding: 40px 5%; /* Padding lateral maior */
+  max-width: 1400px; /* Largura máxima do grid */
+  margin: 0 auto; /* Centraliza o grid na tela */
+  
+}
+
+/* O campo de busca propriamente dito */
+.search-input {
+  width: 100%;
+  padding: 15px 25px;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  border-radius: 50px; 
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  color: var(--text-main);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  
+  /* Transição suave para o foco */
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Efeito elegante ao clicar no campo */
+.search-input:focus {
+  border-color: var(--text-secondary);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px); /* Efeito de levitação sutil */
+}
+
+/* Estilo do ícone de lupa (se você estiver usando um) */
+.search-icon {
+  position: absolute;
+  left: 20px;
+  color: var(--text-secondary);
+}
+
+.search-container {
+  display: flex;
+  justify-content: center; /* Mantém centralizado */
+  width: 90%;             /* Largura relativa para telas pequenas */
+  max-width: 800px;       /* Aumente para 800px ou 900px para ser mais larga */
+                          /* Diminua para 400px ou 500px para ser mais estreita */
+  margin: 0 auto;         /* Garante a centralização horizontal */
+}
