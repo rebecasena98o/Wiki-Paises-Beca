@@ -1,3 +1,7 @@
+import React from 'react';
+import '../style/StyleGlobal.css';
+
+
 const SearchBar = ({ value, onChange }) => {
   return (
     <div className="search-container">
