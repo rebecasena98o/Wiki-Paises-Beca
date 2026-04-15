@@ -72,3 +72,8 @@
   color: #A5D8F6;
   border-bottom-color: #A5D8F6;
 }
+
+body.dark .main-header {
+  background: #1b263b;
+  border-bottom: 1px solid #ffffff1a;
+}
