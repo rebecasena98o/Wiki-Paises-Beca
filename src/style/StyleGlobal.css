@@ -10,6 +10,18 @@
   --font-sans: 'Inter', sans-serif;
 }
 
+body.dark {
+  --primary-color: #e0e1dd;
+  --text-main: #f8f9fa;
+  --text-secondary: #a1b1c7;
+  --bg-color: #0d1b2a; 
+  --card-bg: #1b263b;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -72,6 +84,12 @@ body {
   /* Transição suave para o foco */
   transition: all 0.3s ease;
   outline: none;
+}
+
+body.dark .search-input {
+  background-color: #1b263b;
+  border-color: #415a77;
+  color: white;
 }
 
 /* Efeito elegante ao clicar no campo */
