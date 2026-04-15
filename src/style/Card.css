@@ -37,7 +37,7 @@
 
 /* Título do card */
 .card-title {
-  font-family: var(--font-Times New Roman); /* Usa a fonte Times New Roman */
+  font-family: "Times New Roman", Times, serif;
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 5px;
