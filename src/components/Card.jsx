@@ -13,7 +13,7 @@ const Card = ({ country }) => {
         </p>
         <p className="card-info">
           <strong>Continente:</strong> 
-          {/* A classe do badge é dinâmica baseada na região */}
+          
           <span className={`badge ${country.region.toLowerCase()}`}>
             {country.region}
           </span>

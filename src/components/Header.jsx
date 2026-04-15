@@ -3,8 +3,7 @@ import '../style/StyleGlobal.css';
 import '../style/Header.css';
 
 const Header = ({ onFilter, toggleDarkMode, isDark }) => {
-  // Os nomes devem ser em Inglês para bater com o banco de dados da API
-  // Centro: Continentes para filtro (Requisito funcional do Header)
+  
   const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   return (

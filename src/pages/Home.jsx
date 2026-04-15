@@ -17,7 +17,7 @@ const Home = ({ toggleDarkMode, isDark }) => {
       try {
         const response = await countryService.getAllCountries();
         
-        if (response && Array.isArray(response)) { //array invês de data
+        if (response && Array.isArray(response)) { 
           const sorted = response.sort((a, b) => 
             a.name.common.localeCompare(b.name.common)
           );
