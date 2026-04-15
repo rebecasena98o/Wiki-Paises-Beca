@@ -2,12 +2,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Detail from '../pages/Detail';
 
-function AppRoutes() { 
+function AppRoutes({ toggleDarkMode, isDark }) { 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/country/:code" element={<Detail />} />
+        <Route path="/" element={<Home toggleDarkMode={toggleDarkMode} isDark={isDark} />} />
+        <Route path="/country/:code" element={<Detail toggleDarkMode={toggleDarkMode} isDark={isDark} />} />
       </Routes>
     </BrowserRouter>
   );
