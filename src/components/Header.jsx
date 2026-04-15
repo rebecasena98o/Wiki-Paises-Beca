@@ -19,7 +19,7 @@ const Header = ({ onFilter }) => {
          
         <nav className="nav-menu"> 
           {regions.map(region => (
-           <button key={region} onClick={() => onFilter(region)} className="nav-menu-item">
+           <button key={region} onClick={() => onFilter(region)} className="nav-menu-item" data-continent={region.toLowerCase()}>
           {region}
         </button>
           ))}
