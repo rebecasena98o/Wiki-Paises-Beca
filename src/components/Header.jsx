@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import '../style/StyleGlobal.css';
 import '../style/Header.css';
 
-const Header = ({ onFilter }) => {
+const Header = ({ onFilter, toggleDarkMode, isDark }) => {
   // Os nomes devem ser em Inglês para bater com o banco de dados da API
   // Centro: Continentes para filtro (Requisito funcional do Header)
   const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
@@ -26,8 +26,13 @@ const Header = ({ onFilter }) => {
         </nav>
 
         <div className="header-section right header-icons">
-          <span>🌐</span>
-          <span>🌙</span>
+          <span 
+          onClick={toggleDarkMode} 
+          style={{ cursor: 'pointer', fontSize: '1.2rem' }}
+          title="Alternar Modo Escuro"
+        >
+          {isDark ? '☀️' : '🌙'} {/* Muda o ícone dependendo do estado */}
+        </span>
         </div>
       </div>
     </header>
