@@ -64,8 +64,8 @@
 }
 
 .nav-menu-item[data-continent="europe"]:hover {
-  color: #330B67;
-  border-bottom-color: #330B67;
+  color: #BFB2D3;
+  border-bottom-color: #BFB2D3;
 }
 
 .nav-menu-item[data-continent="oceania"]:hover {
