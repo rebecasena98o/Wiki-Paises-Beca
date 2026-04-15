@@ -5,7 +5,7 @@ import Blockinfo from '../components/Blockinfo';
 import Loader from '../components/Loader'; 
 import Layout from '../components/Layout';
 
-const Detail = () => {
+const Detail = ({ toggleDarkMode, isDark }) => {
   const { code } = useParams(); 
   const [country, setCountry] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -34,7 +34,7 @@ const Detail = () => {
   // Se estiver carregando, mostra o Loader centralizado
   if (loading) return <Layout><Loader /></Layout>;
 
-  // Se não encontrar o país após o carregamento
+  
   if (!country) {
     return (
       <Layout>
@@ -51,7 +51,7 @@ const Detail = () => {
     );
   }
 
-  // Tratamento de dados complexos (Objetos para String)
+  
   const currencies = country.currencies 
     ? Object.values(country.currencies).map(c => `${c.name} (${c.symbol})`).join(', ')
     : 'N/A';
@@ -61,7 +61,7 @@ const Detail = () => {
     : 'N/A';
 
   return (
-    <Layout>
+    <Layout toggleDarkMode={toggleDarkMode} isDark={isDark}>
       <div className="detail-container" style={{ padding: '40px 5%', maxWidth: '1300px', margin: '0 auto' }}>
         
       {/* Botão de Voltar sofisticado */}
