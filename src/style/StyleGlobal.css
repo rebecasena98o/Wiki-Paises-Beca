@@ -16,13 +16,13 @@ body.dark {
   --text-secondary: #a1b1c7;
   --bg-color: #0d1b2a; 
   --card-bg: #1b263b;
-  --bg-color: linear-gradient(135deg, #302048 0%, #1c0a22 100%); 
+  --bg-color: linear-gradient(135deg, #0d1b2a 0%, #050a10 100%);
   --card-bg: #1b263b;
 }
 
 body {
   min-height: 100vh;
-  background: var(--bg-color); /* Mudamos de background-color para background */
+  background: var(--bg-color); 
   background-attachment: fixed; /* O fundo não rola junto com a página */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -35,7 +35,7 @@ body {
 
 body {
   background-color: var(--bg-color);
-  font-family: var(--font-times new-roman);
+  font-family: var(--font-times --font-serif);
   color: var(--text-main);
   line-height: 1.6;
 }
