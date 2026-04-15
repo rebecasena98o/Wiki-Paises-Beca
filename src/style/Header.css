@@ -74,6 +74,8 @@
 }
 
 body.dark .main-header {
-  background: #1b263b;
+  background-color: var(--card-bg);
+  border: 1px solid #7b2cbf;
   border-bottom: 1px solid #ffffff1a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(123, 44, 191, 0.2);
 }
