@@ -1,6 +1,6 @@
 
 .card {
-  background-color: white;
+  background-color: var(--card-bg);
   border-radius: 8px; /* Cantos arredondados */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
   overflow: hidden; /* Garante que a imagem não saia do card */
@@ -10,7 +10,7 @@
   width: 100%; /* Ocupa o espaço que o Grid der */
   cursor: pointer;
   text-decoration: none; /* Remove sublinhado do link */
-  color: inherit; /* Mantém a cor do texto padrão */
+  color: var(--text-main);
 }
 
 /* Efeito ao passar o mouse */
@@ -24,7 +24,7 @@
   width: 100%;
   height: 160px; /* Altura fixa para alinhar */
   object-fit: cover; /* Recorta a imagem para preencher sem distorcer */
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Estilo do Corpo do Card (Textos) */
@@ -74,3 +74,7 @@
 .badge.asia { background-color: #e63946; }
 .badge.europe { background-color: #457b9d; }
 .badge.oceania { background-color: #1d3557; }
+
+body.dark .card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
