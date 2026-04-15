@@ -35,7 +35,7 @@ body {
 
 body {
   background-color: var(--bg-color);
-  font-family: var(--font-times --font-serif);
+  font-family: var(--font-times-new-roman);
   color: var(--text-main);
   line-height: 1.6;
 }
