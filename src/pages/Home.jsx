@@ -6,7 +6,7 @@ import CountryGrid from '../components/CountryGrid';
 import Loader from '../components/Loader';
 import "../style/StyleGlobal.css";
 
-const Home = () => {
+const Home = ({ toggleDarkMode, isDark }) => {
   const [countries, setCountries] = useState([]); //lista da Api
   const [filteredCountries, setFilteredCountries] = useState([]); // Lista que aparece na tela
   const [searchQuery, setSearchQuery] = useState(""); 
@@ -51,7 +51,7 @@ const Home = () => {
   );
 
   return (
-    <Layout onFilter={filterByRegion}>
+    <Layout onFilter={filterByRegion} toggleDarkMode={toggleDarkMode} isDark={isDark}>
       <section className="hero">
         <h1>Explore the Atlas</h1>
         <p>A CURATED DIGITAL ARCHIVE OF SOVEREIGN NATIONS AND CULTURES</p>
