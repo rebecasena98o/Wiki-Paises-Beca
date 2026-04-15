@@ -67,31 +67,31 @@ const Detail = () => {
       {/* Botão de Voltar sofisticado */}
     <Link to="/" style={{ 
     textDecoration: 'none',
-    backgroundColor: '#ffffff', // Fundo branco para parecer botão
-    padding: '10px 20px',       // Espaçamento interno
-    borderRadius: '8px',        // Bordas arredondadas
-    border: '1px solid #e0e0e0', // Borda sutil
-    boxShadow: '0 2px 5px rgba(0,0,0,0.08)', // Sombra inicial sutil
-    color: 'var(--text-main)', 
+    backgroundColor: 'var(--card-bg)', // Agora segue o modo escuro
+    padding: '10px 20px',
+    borderRadius: '8px',
+    border: '1px solid var(--text-secondary)', // Borda sutil usando variável
+    boxShadow: '0 2px 5px rgba(0,0,0,0.1)', 
+    color: 'var(--text-main)', // Texto adapta-se automaticamente
     fontWeight: 'bold', 
     fontSize: '0.8rem',
     letterSpacing: '1px',
-    display: 'inline-flex',     // Alinha ícone e texto
+    display: 'inline-flex',
     alignItems: 'center',
     marginBottom: '30px',
-    transition: 'all 0.3s ease', // Transição suave para todos os efeitos
+    transition: 'all 0.3s ease',
     cursor: 'pointer'
-}} 
+}}
 // Efeitos de Hover e Active via Eventos de Mouse
   onMouseEnter={e => {
     e.currentTarget.style.transform = 'translateY(-3px)'; // Levitação sutil
     e.currentTarget.style.boxShadow = '0 6px 15px rgba(0,0,0,0.12)'; // Profundidade
-    e.currentTarget.style.borderColor = '#ccc';
+    e.currentTarget.style.backgroundColor = 'var(--bg-color)';
 }} 
   onMouseLeave={e => {
     e.currentTarget.style.transform = 'translateY(0)'; // Volta ao normal
     e.currentTarget.style.boxShadow = '0 2px 5px rgba(0,0,0,0.08)';
-    e.currentTarget.style.borderColor = '#e0e0e0';
+    e.currentTarget.style.backgroundColor = 'var(--card-bg)';
 }}
   onMouseDown={e => {
     e.currentTarget.style.transform = 'translateY(-1px)'; // Efeito de clique (afunda levemente)
@@ -101,7 +101,7 @@ const Detail = () => {
     e.currentTarget.style.transform = 'translateY(-3px)';
 }}
 >
-    <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>←</span> BACK TO ATLAS
+    <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>↩ </span> BACK TO ATLAS
 </Link>
 
         {/* Cabeçalho do Detalhe */}
